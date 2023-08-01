@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name='description' content='The Hamud language is a constructed language that originated from internet memes, with its grammar based on Toki Pona and its vocabulary derived from Arabic. 哈姆语是一门起源于网络流行哽，语法基于道本语、词汇基于阿拉伯词源的人造语言。这是哈姆语官方网站。'>
+	<meta http-equiv='content-language' content='zh-Hans-CN'>
+	<title>字符替换</title>
+	<link rel="icon" href="../zh-Hans-CN/favicon.svg">
+	<link rel="stylesheet" href="../css/hack/dist/hack.css">
+	<link rel="stylesheet" href="../css/hack/dist/standard.css">
+</head>
+<body class="standard">
+	<div class="main container">
+   	<p align="center"><img alt="Hamud language" src="../zh-Hans-CN/favicon.svg" width="40%" style="max-width:256px"></p>
+
+	<h1>字符替换</h1>
+	<fieldset class="form-group form-primary">
+		<label for="inputText">字符</label>
+		<input id="inputText" type="text" placeholder="" class="form-control">
+		<div class="help-block">请输入拉丁字母或符号。</div>
+	</fieldset>
+	<button onclick="replaceChars()" class="btn btn-primary btn-ghost">替换</button>
+
+	<table>
+		<tr>
+			<th>拉丁字母或符号</th>
+			<th>Tri 式哈拉伯符号</th>
+			<th>Onerio 式哈拉伯符号</th>
+		</tr>
+		<tr>
+			<td>h</td>
+			<td>ح</td>
+			<td>ح</td>
+		</tr>
+		<tr>
+			<td>m</td>
+			<td>م</td>
+			<td>م</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>د</td>
+			<td>د</td>
+		</tr>
+		<tr>
+			<td>*</td>
+			<td>خ</td>
+			<td>چ</td>
+		</tr>
+		<tr>
+			<td>b</td>
+			<td>ب</td>
+			<td>ب</td>
+		</tr>
+		<tr>
+			<td>g</td>
+			<td>گ</td>
+			<td>ق</td>
+		</tr>
+		<tr>
+			<td>n</td>
+			<td>ن</td>
+			<td>ن</td>
+		</tr>
+		<tr>
+			<td>r</td>
+			<td>ر</td>
+			<td>ر</td>
+		</tr>
+		<tr>
+			<td>s</td>
+			<td>س</td>
+			<td>س</td>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>ا</td>
+			<td>ا</td>
+		</tr>
+		<tr>
+			<td>u</td>
+			<td>و</td>
+			<td>و</td>
+		</tr>
+		<tr>
+			<td>i</td>
+			<td>ي</td>
+			<td>ي</td>
+		</tr>
+		<tr>
+			<td>o</td>
+			<td>او</td>
+			<td>وٰ</td>
+		</tr>
+		<tr>
+			<td>e</td>
+			<td>اي</td>
+			<td>يٰ</td>
+		</tr>
+	</table>
+	</div>
+	<script>
+		function replaceChars() {
+			var inputText = document.getElementById("inputText").value.toLowerCase();
+			var latinChars = "hmd*bgnrsauioe";
+			var triChars = "حمدخبگنرساوايايا";
+			var onerioChars = "حمدچبقنرساووٰيٰ";
+
+			var outputOnerio = "";
+			var outputTri = "";
+
+			for (var i = 0; i < inputText.length; i++) {
+				var index = latinChars.indexOf(inputText[i]);
+				if (index !== -1) {
+					outputOnerio += onerioChars[index];
+					outputTri += triChars[index];
+				} else {
+					outputOnerio += inputText[i];
+					outputTri += inputText[i];
+				}
+			}
+
+			alert("Onerio 式哈拉伯符号: " + outputOnerio + "\nTri 式哈拉伯符号: " + outputTri);
+		}
+	</script>
+</body>
+</html>
