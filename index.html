@@ -29,6 +29,9 @@
 			translate.ignore.class.push('notTranslate');
 			translate.execute();
 		</script>
+		<style>
+			#translate>.translateSelectLanguage {position:absolute;left:2rem;top:2rem;font-size:1rem;padding:0.3rem;padding-left:0.5rem;padding-right:0.5rem;border:1px solid #C9C9C9;background-color:#fff;color:#555}
+		</style>
 
 		<h1>字符替换</h1>
 		<fieldset class="form-group form-primary">
@@ -115,6 +118,12 @@
 				<td>يٰ</td>
 			</tr>
 		</table>
+
+		<button onclick="window.location.href='/'" class="btn btn-success btn-ghost"><font class="notTranslate">گاومحا ياري نايناين ناينحا</font> - 回到主页</button>
+		<button onclick="window.location.href='#'" class="btn btn-success btn-ghost"><font class="notTranslate">گاومحا ياري نايناين ناينحا</font> - 返回页顶</button>
+		<button onclick="javascript:history.back(-1);" class="btn btn-success btn-ghost"><font class="notTranslate">گاومحا ياري نايناين ناينحا</font> - 返回</button>
+
+		<footer class="footer"><a href="https://icp.gov.moe/?keyword=20230986" target="_blank">萌 ICP 备 20230986 号</a></footer>
 	</div>
 	<script>
 		function replaceChars() {
