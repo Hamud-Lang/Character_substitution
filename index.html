@@ -30,7 +30,8 @@
 			translate.execute();
 		</script>
 		<style>
-			#translate>.translateSelectLanguage {cursor:pointer;position:absolute;left:2rem;top:2rem;font-size:1rem;padding:0.3rem;padding-left:0.5rem;padding-right:0.5rem;border:1px solid #C9C9C9;background-color:#fff;color:#555}
+			@media screen and (max-width: 980px){#translate>.translateSelectLanguage {cursor:pointer;position:absolute;left:1rem;top:1rem;font-size:.9rem;padding:0.3rem;padding-left:0.5rem;padding-right:0.5rem;border:1px solid #C9C9C9;background-color:#fff;color:#555;width:6rem}}
+			@media screen and (min-width: 980px){#translate>.translateSelectLanguage {cursor:pointer;position:absolute;left:2rem;top:2rem;font-size:1rem;padding:0.3rem;padding-left:0.5rem;padding-right:0.5rem;border:1px solid #C9C9C9;background-color:#fff;color:#555}}
 		</style>
 
 		<h1>字符替换</h1>
